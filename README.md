@@ -1,2 +1,2 @@
-# c-code2
+# C-code
 c语言
