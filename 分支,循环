@@ -1,0 +1,31 @@
+1.
+
+#include<stdio.h>
+int main()
+{
+	int ch = 0;
+	while ((ch = getchar()) != EOF)                                 //EOF->end of file -> -1    
+                                                                  //ctrl+z
+	{	
+		if (ch < '0' || ch>'9')
+			continue;
+		putchar(ch);
+	}
+	return 0;
+}
+<><><><><><><><><><><><><><><><><><><><><>><><><><><>
+
+2.
+
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	int k = 0;              
+	for (i = 0, k = 0; k = 0;i++,k++)                     //循环0次,k=0为假不进入循环体
+		k++;
+	return 0;
+}
+
+
+
