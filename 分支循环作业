@@ -53,17 +53,48 @@ int main()
 int main()
 {
 	int year=0 ;
+	int count = 0;
 	for (year = 1000; year <= 2000; year++)
 	{
 		if (year % 4 == 0 && year % 100 != 0)
 		{
 			printf("%d是闰年", year);
+			count++;
 		}
 		else if (year % 400 == 0)
 		{
 			printf("%d是闰年", year);
+			count++;
 		}
 	}
+	printf("/ncount=%d\n",count);
 	return 0;
 }
 
+4.打印素数
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int i = 0;
+	int count = 0;
+	for (i = 100; i <= 200; i++)
+	{
+		//1和他本身整除,试除法
+		int j = 0;
+		for (j = 2; j <=sqrt(i); j++)
+		{
+			if (i % j == 0)
+			{
+				break;
+			}
+		}
+		if (j>sqrt(i))
+		{
+			count++;
+			printf("%d是素数  ", i);
+		}
+	}
+	printf("\ncount=%d\n", count);
+	return 0;
+}
