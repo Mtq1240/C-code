@@ -1,0 +1,64 @@
+1.//求1/1+1/2-1/3+1/4-1/5******+1/100
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	double sum = 0.0;
+	int flag = 1;
+	for (i=1;i<=100;i++)
+	{
+		sum+=flag*1.0 / i;
+		flag = -flag;
+		
+	}
+		printf("%lf\n", sum);
+
+
+	return 0;
+}
+
+
+
+
+
+
+2.//求出十个数中的最大值
+#include<stdio.h>
+int main()
+{
+	int arr[] = { -1,-2,-3,-4,-5,-6,-7,-8,-9,-10 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int max = arr[0];
+	int i = 0;
+	for (i = 1; i < sz; i++)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+		}
+		printf("max=%d\n", max);
+	}
+	return 0;
+}
+
+
+
+
+
+
+3.//乘法口诀表
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 9; i++)
+	{
+		int j = 0;
+		for (j = 1; j <= i; j++)
+		{
+			printf("%d*%d=%-2d  ", i, j, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
