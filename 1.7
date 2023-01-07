@@ -1,0 +1,60 @@
+//1.  查找指定元素
+
+#include<stdio.h>
+int main()
+{
+	int arr[] = {1,2,3,4,5,6,7,8,9,10};
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int k = 8;
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		if (arr[i] == k)
+		{
+			printf("找到了,下标为 %d\n",i);
+			break;
+		}
+	}
+	if (i == sz)
+		printf("找不到!");
+	return 0;
+}
+
+
+//2.二分查找算法
+
+ #include<stdio.h>
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int k = 8;
+
+	
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int left = 0;
+	int right = sz - 1;
+
+	while (left<=right)
+	{
+		int mid = (left + right) / 2;
+		if (arr[mid] < k)
+		{
+			left = mid+1 ;                        //+1是为了下面判断"找不到",不+1会陷入循环,例如左边是元素6,右边是元素8,下标是5和6,找不存在的元素7
+		}
+		else if (arr[mid] > k)
+		{
+			right = mid -1;
+		}
+		else
+		{
+			printf("找到了,下标是:%d\n", mid);
+			break;
+		}
+	}
+	if (left > right)
+	{
+		printf("找不到\n");
+	}
+	return 0;
+}
+
