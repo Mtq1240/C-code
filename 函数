@@ -87,9 +87,10 @@ int binary_search(int a[], int k, int s)
 {
 	int left = 0;
 	int right = s - 1;
-	int mid = (left + right) / 2;
+	
 	while (left <= right)
 	{
+		int mid = (left + right) / 2;
 		if (a[mid] > k)
 		{
 			right = mid - 1; //mid指向的元素比k大,查找范围要缩小,mid要减一
