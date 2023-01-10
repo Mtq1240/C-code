@@ -19,7 +19,7 @@ int main()
 
 
 
-//1.函数打印100~200之间的素数
+//2.函数打印100~200之间的素数
 int is_prime(t)
 {
 	int n = 0;
@@ -48,5 +48,79 @@ int main()
 		}
 	}
 	printf("\ncount=%d\n", count);
+	return 0;
+}
+
+
+
+
+
+//3.函数判断闰年
+#include<stdio.h>
+//如果是闰年返回1,不是返回0
+int is_leap_year(int i)			//一个函数不写返回类型,默认返回int类型
+{
+	return  ((i % 4 == 0 && i % 100 != 0 )|| (i % 400 == 0));
+}
+int main()
+{
+	int y = 0;
+	int count = 0;
+	for (y=1000;y<=2000;y++)
+	{
+		if (is_leap_year(y)==1)
+		{
+			count++;
+			printf("%d ", y);
+		}
+	}
+	printf("\ncount=%d\n", count);
+	return 0;
+}
+
+
+
+
+
+//4.实现一个整形有序数组的二分查找
+int binary_search(int a[], int k, int s)
+{
+	int left = 0;
+	int right = s - 1;
+	int mid = (left + right) / 2;
+	while (left <= right)
+	{
+		if (a[mid] > k)
+		{
+			right = mid - 1; //mid指向的元素比k大,查找范围要缩小,mid要减一
+		}
+		else if (a[mid] < k)
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+	return -1;  //找不到的情况
+}
+#include<stdio.h>
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int key = 7;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	//找到了就返回找到位置的下标,
+	//找不到返回-1
+	int ret = binary_search(arr, key, sz);
+	if (-1 == ret)
+	{
+		printf("没有找到\n");
+	}
+	else
+	{
+		printf("找到了,下标是%d\n",ret);
+	}
 	return 0;
 }
