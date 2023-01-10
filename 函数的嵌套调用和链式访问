@@ -1,0 +1,20 @@
+/函数的嵌套调用和链式访问
+void test3()
+{
+	printf("hehe\n");
+}
+
+int test2()
+{
+	test3();
+	return 0;
+}
+
+int main()
+{
+	test2();
+	return 0;
+}
+
+
+//链式访问: 把一个函数的返回值作为另一个函数的参数
