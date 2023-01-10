@@ -82,18 +82,20 @@ int main()
 
 
 
+
 //4.实现一个整形有序数组的二分查找
-int binary_search(int a[], int k, int s)
-{
+
+int binary_search(int a[], int k, int s)		//int binary_search(int *a,int k)
+{							//首元素的地址不需要为a[]开辟大小
 	int left = 0;
 	int right = s - 1;
 	
 	while (left <= right)
 	{
-		int mid = (left + right) / 2;
+		int mid = (left + right) / 2;		//计算数组个数一定要在主函数内部计算,再以参数的形式传进创建的函数中
 		if (a[mid] > k)
 		{
-			right = mid - 1; //mid指向的元素比k大,查找范围要缩小,mid要减一
+			right = mid - 1;		//mid指向的元素比k大,查找范围要缩小,mid要减一
 		}
 		else if (a[mid] < k)
 		{
@@ -110,11 +112,12 @@ int binary_search(int a[], int k, int s)
 int main()
 {
 	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int key = 7;
+	int key = 17;
 	int sz = sizeof(arr) / sizeof(arr[0]);
 	//找到了就返回找到位置的下标,
 	//找不到返回-1
-	int ret = binary_search(arr, key, sz);
+	int ret = binary_search(arr, key, sz);			//数组arr传参,实际传递的不是数组的本身
+								//仅仅传过去了数组首元素的地址即指针
 	if (-1 == ret)
 	{
 		printf("没有找到\n");
@@ -123,5 +126,29 @@ int main()
 	{
 		printf("找到了,下标是%d\n",ret);
 	}
+	return 0;
+}
+
+
+
+
+
+//写一个函数,每调用一次这个函数,就会将num的的值增加1
+void Add(int* ps)  	//收到地址
+{
+	(*ps)++;
+}
+#include<stdio.h>
+int main()
+{
+	int sum = 0;
+	Add(&sum);	//改变值运用指针变量取地址
+	printf("%d", sum);
+
+	Add(&sum);
+	printf("%d", sum);
+
+	Add(&sum);
+	printf("%d", sum);
 	return 0;
 }
