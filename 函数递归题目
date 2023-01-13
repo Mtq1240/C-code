@@ -1,0 +1,35 @@
+//字符串逆序(递归)
+
+int my_strlen(char *str)
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+
+char reverse_string(char* str)
+{
+	int left = 0;
+	int right = my_strlen(str) - 1;
+	while (left < right)
+	{
+		char tmp = *(str+left);  //等同于str[left],  *(str+left)->str0的地址元素  解应用*()
+		*(str + left) = *(str + right);
+		*(str + right) = tmp;
+		left++;
+		right--;
+	}
+	return str;
+}
+#include<stdio.h>
+int main()
+{
+	char arr[] = "abcdef";
+	reverse_string(arr);
+	printf("%s\n", arr);
+	return 0;
+}
