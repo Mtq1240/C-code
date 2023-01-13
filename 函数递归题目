@@ -1,4 +1,4 @@
-//字符串逆序(递归)
+//字符串逆序(1)
 
 int my_strlen(char *str)
 {
@@ -29,6 +29,44 @@ char reverse_string(char* str)
 int main()
 {
 	char arr[] = "abcdef";
+	reverse_string(arr);
+	printf("%s\n", arr);
+	return 0;
+}
+
+
+
+
+
+//2.递归实现:
+#include<stdio.h>
+int my_strlen(char *str)
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+
+void reverse_string(char *str)
+{
+	char tmp = *str;
+	int len = my_strlen(str);
+	*str = *(str+len-1);
+	*(str+len-1) = '\0';
+	if (my_strlen(str + 1) >= 2)
+	{
+		reverse_string(str + 1);
+	}
+	*(str + len - 1) = tmp;
+}
+
+int main()
+{
+	char arr[] = "abcd";
 	reverse_string(arr);
 	printf("%s\n", arr);
 	return 0;
