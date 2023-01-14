@@ -71,3 +71,55 @@ int main()
 	printf("%s\n", arr);
 	return 0;
 }
+
+
+
+//计算一个数的每一位之和,递归实现
+#include<stdio.h>
+int DigitSum(int n)
+{
+	if (n > 9)
+	{
+		return DigitSum(n / 10) + n % 10;
+	}
+	else
+	{
+		return n;
+	}
+}
+int main()
+{
+	int num = 0;
+	scanf("%d", &num);
+	int sum = DigitSum(num);
+	printf("%d", sum);
+	return 0;
+}
+
+
+
+//实现n的k次方,递归实现
+#include<stdio.h>
+double Pow(int n, int k)
+{
+	if (k == 0)
+	{
+		return 1;
+	}
+	else if (k > 0)
+	{
+		return n * Pow(n, k - 1);
+	}
+	else
+	{
+		return 1.0 / (n * Pow(n, -k-1));		//-k-1,是实现转换为正数进行递归
+	}
+}
+int main()
+{
+	int n = 0;
+	int k = 0;
+	scanf("%d %d", &n, &k);
+	double ret = Pow(n, k);
+	printf("%lf", ret);
+}
