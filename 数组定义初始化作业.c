@@ -59,3 +59,33 @@ int main()
 	print(arr, sz);
 	return 0;
 }
+
+
+
+//两个数组一样大,将A中的数组内容和B中的内容交换
+#include<stdio.h>
+int main()
+{
+	int arr1[] = { 1,3,5,7,9 };
+	int arr2[] = { 2,4,6,8,10 };
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		int tmp = arr1[i];
+		arr1[i] = arr2[i];
+		arr2[i] = tmp;
+	}
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr1[i]);
+
+	}
+	printf("\n");
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr2[i]);
+
+	}
+	return 0;
+}
