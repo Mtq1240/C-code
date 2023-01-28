@@ -73,3 +73,19 @@ int main()
 	}
 	return 0;
 }
+
+
+
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int* p = arr; //数组名是首元素地址,p是所指向元素的地址,*p解引用读取到地址中的内容
+	int* pend = arr + 9;
+	while (p <= pend)
+	{
+		printf("%d\n", *p);
+		p++;	//p++是地址加加,*p++是元素加加
+	}
+	return 0;
+}
