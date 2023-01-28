@@ -89,3 +89,14 @@ int main()
 	}
 	return 0;
 }
+
+
+
+include<stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	//指针-指针的前提:两个指针指向同一块空间
+	printf("%d\n", &arr[9] - &arr[0]); //指针-指针得到的是两个指针之间的元素个数
+	return 0;
+}
