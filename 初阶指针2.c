@@ -100,3 +100,24 @@ int main()
 	printf("%d\n", &arr[9] - &arr[0]); //指针-指针得到的是两个指针之间的元素个数
 	return 0;
 }
+
+
+
+
+//求字符串长度,指针-指针:
+#include<stdio.h>
+int my_strlen(char*str)
+{
+	char* start = str;
+	while (*str != '\0')
+	{
+		str++;
+	}
+	return str - start;
+}
+int main()
+{
+	int len = my_strlen("abc");
+	printf("%d", len);
+	return 0;
+}
