@@ -1,5 +1,5 @@
 
-1.   输入接收的字符放进ch中,! =EOF输出输入的字符,EOF为文件结束标志
+//1.输入接收的字符放进ch中,! =EOF输出输入的字符,EOF为文件结束标志
 
 #include<stdio.h>
 int main()
@@ -16,7 +16,7 @@ int main()
 
 
 
-2.   输入一串字符并且是否确认
+//2.输入一串字符并且是否确认
 
 #include<stdio.h>
 int main()
@@ -53,7 +53,7 @@ int main()
 
 
 
-3.打印字符0~9之间的字符
+//3.打印字符0~9之间的字符
 #include<stdio.h>
 int main()
 {
