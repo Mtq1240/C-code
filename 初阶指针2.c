@@ -60,3 +60,16 @@ int main()
 //3.指针使用之前检查有效性
 
 
+//指针+-整数
+#include<stdio.h>  
+#define N_VALUES 5
+int main()
+{
+	float values[N_VALUES];
+	float* vp;
+	for (vp = &values[0]; vp < &values[N_VALUES];)
+	{
+		*vp++ = 0; 
+	}
+	return 0;
+}
