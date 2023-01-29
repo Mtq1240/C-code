@@ -29,3 +29,16 @@ int main()
 	//2[arr]<==>*(2+arr)
 	return 0;
 }
+
+
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int* pa = &a;//pa是指针变量,一级指针
+
+	//ppa就是一个二级指针变量
+	int** ppa = &pa;//pa也是个变量,&pa取出pa在内存中起始地址
+	//*ppa==pa	*pa=a	* *pa==a
+	return 0;
+}
