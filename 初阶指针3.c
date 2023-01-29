@@ -42,3 +42,15 @@ int main()
 	//*ppa==pa	*pa=a	* *pa==a
 	return 0;
 }
+
+
+
+#include<stdio.h>
+int main()
+{
+	int arr[10];//整型数组 - 存放整形的数组
+	char ch[5];//字符数组 - 存放字符的数组
+	//指针数组 - 存放指针的数组
+	int* parr[5];//整形指针的数组
+	return 0;
+}
