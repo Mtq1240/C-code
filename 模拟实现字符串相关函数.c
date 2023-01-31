@@ -33,6 +33,30 @@ int main()
 }
 
 
+
+
+
+//模拟实现strlen :求字符串长度
+#include<stdio.h>
+#include<assert.h>
+size_t my_strlen(const char* arr)
+{
+	assert(arr != NULL);
+	size_t count = 0;
+	while (*arr++)
+	{
+		count++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[]="abcd";
+	int ret = my_strlen(arr);
+	printf("%d\n", ret);
+	return 0;
+}
+
 //const:
 #include<stdio.h>
 int main()
