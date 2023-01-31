@@ -1,5 +1,6 @@
 //模拟实现字符串相关函数
 //实现strcpy:
+//其实返回的是目标空间的起始地址
 #include<stdio.h>
 #include<assert.h>
 //void my_strcpy(char* dest, char* src)
@@ -10,22 +11,24 @@
 //	}
 //	*dest = *src;//\0的拷贝
 //}
-void my_strcpy(char* dest, const char* src)
+char* my_strcpy(char* dest, const char* src)
 {
 	assert(src != NULL);//断言
 	assert(dest != NULL);//断言
-
+	char* ret = dest;
 	while (*dest++ = *src++)	//'\0'=0,既copy\0,又使得循环停止
 	{
 		;
 	}
+	return ret;//返回目标空间的起始地址
 }
+
 int main()
 {
 	char arr1[20] = "XXXXXXXXXX";
 	char arr2[] = "hello";
-	my_strcpy(arr1, arr2);
-	printf("%s\n", arr1);
+
+	printf("%s\n", my_strcpy(arr1, arr2););
 	return 0;
 }
 
