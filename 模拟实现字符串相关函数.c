@@ -1,5 +1,5 @@
 //模拟实现字符串相关函数
-//实现strcpy
+//实现strcpy:
 #include<stdio.h>
 #include<assert.h>
 //void my_strcpy(char* dest, char* src)
@@ -26,5 +26,27 @@ int main()
 	char arr2[] = "hello";
 	my_strcpy(arr1, arr2);
 	printf("%s\n", arr1);
+	return 0;
+}
+
+
+//const:
+#include<stdio.h>
+int main()
+{
+	//const 修饰变量,这个变量被称为常变量,不能被修改,但是本质上还是变量 
+	const int num = 10;
+	//num=20 //err
+
+	const int* p = &num;
+	//const修饰指针变量的时候:
+	// comst 如果在*的左边,修饰的是*p,表示指针指向的内容,是不能通过指针来改变的,但是指针变量本身是可以修改的(p)
+	// comst 如果在*的右边,修饰的是p,表示指针指针变量不能被改变,但是指针指向的内容可以改变(*p)
+	// int *const p
+	//*p = 20;
+
+
+	// comst 如果在*的有边,修饰的是p,表示指针指针变量不能被改变,但是指针指向的内容可以改变
+	printf("%d\n", num);
 	return 0;
 }
