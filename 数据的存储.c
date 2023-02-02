@@ -18,3 +18,38 @@
 小端字节序:
 
 把数据的低位字节序的内容存放在低地址处，高位字节序的内容存放在高地址处
+
+
+
+
+//请简述大小端字节的概念,设计一个小程序来判断当前机器的字节数
+#include<stdio.h>
+int check_sys()
+{
+	int a = 1;
+	char* p = (char*)&a;//int*
+	return *p;//返回1表示小端,返回0表示大端
+
+	/*if (*p == 1)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}*/
+}
+
+int main()
+{
+	int ret=check_sys();
+	if (ret == 1)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}
+	return 0;
+}
