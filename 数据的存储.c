@@ -81,3 +81,12 @@ int main()
 	return 0;
 
 }
+
+
+
+
+//补充:
+//1.char 到底是signed char还是unsigned char?
+//C语言无规定,取决于编译器
+//int是 signed int
+//short是 signed short
