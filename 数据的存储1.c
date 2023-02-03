@@ -56,6 +56,7 @@ int main()
 
 
 //练习
+//1.
 #include <stdio.h>
 int main()
 {
@@ -92,7 +93,7 @@ int main()
 //short是 signed short
 
 
-
+//2.
 #include<stdio.h>
 int main()
 {
@@ -107,7 +108,7 @@ int main()
 }
 
 
-
+//3.
 #include<stdio.h>
 int main()
 {
@@ -125,6 +126,7 @@ int main()
 //char类型取值范围
 //有符号char取值范围:-128~127
 
+//4.
 #include<stdio.h>
 int main()
 {
@@ -134,5 +136,48 @@ int main()
 	//补码:00000000000000000000000000001010
 	printf("%d\n", i + j);//11111111111111111111111111110110(补码)
 	//转换为原码 结果为-10
+	return 0;
+}
+
+
+
+//5.
+#include<stdio.h>
+int main()
+{
+	unsigned int i;
+	for (i = 9; i >= 0; i++)
+	{
+		printf("%u\n", i);//死循环,无符号不会产生负数
+	}
+	return 0;
+}
+
+
+//6.
+#include<stdio.h>
+int main()
+{
+	char a[1000];
+	int i;
+	for (i = 0; i < 1000; i++)
+	{
+		a[i] = -1 - i;
+	}
+	//-1,-2,-3...-127 -128 127 126 125...3 ,2 ,1,0,-1,-2...-127,-128,127...
+	printf("%d\n", strlen(a));//找到\0-> 0  就是128+127=255
+	return 0;
+}
+
+
+//7.
+#include<stdio.h>
+unsigned char i = 0;
+int main()
+{
+	for (i = 0; i <= 255; i++)
+	{
+		printf("hello word\n");//死循环 
+	}
 	return 0;
 }
