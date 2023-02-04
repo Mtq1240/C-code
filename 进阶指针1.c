@@ -61,3 +61,23 @@ int main()
 	//parr 就是一个数组指针 - 其中存放的就是数组的地址 
 	return 0;
 }
+
+
+
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 0 };
+
+	int* p1 = arr;//指向的是数组的首元素地址
+	int(*p2)[10] = &arr;//指向的是这个数组的地址
+
+	printf("%p\n", p1);
+	printf("%p\n", p1+1);//首元素地址+1到下一个元素的地址,跳过四个字节
+
+	printf("%p\n", p2);
+	printf("%p\n", p2+1);//跳过一个数组的地址,四十个字节
+
+
+	return 0;
+}
