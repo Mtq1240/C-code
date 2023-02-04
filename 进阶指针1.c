@@ -44,3 +44,20 @@ int main()
 	}
 	return 0;
 }
+
+
+
+//数组指针 - 是指向数组的指针
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int* pa = &a;
+	char ch = 'w';
+	char* pc = &ch;
+
+	int arr[10] = { 1,2,3,4,5 };
+	int(*parr)[10] = &arr;//取出的是数组的地址
+	//parr 就是一个数组指针 - 其中存放的就是数组的地址 
+	return 0;
+}
