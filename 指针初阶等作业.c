@@ -74,3 +74,37 @@ int main()
 //“水仙花数”是指一个n位数，其各位数字的n次方之和确好等于该数本身，
 //如 : 153＝1 ^ 3＋5 ^ 3＋3 ^ 3，则153是一个“水仙花数”。
 
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	//1.判断位数 - n
+	//2.求各位数n次方之和
+	//3.判断是否为水仙花数
+	int i = 0;
+	for (i = 0; i <= 100000; i++)
+	{
+		//1.判断位数 - n
+		int n = 1;//因为至少是一位数
+		int temp = i;//创建一个变量不使i发生变化
+		while (temp/10)
+		{
+			temp = temp / 10;
+			n++;
+		}
+		//2.求各位数n次方之和
+		temp = i;
+		int sum = 0;
+		while (temp)
+		{
+			sum += pow(temp % 10, n);
+			temp = temp / 10;
+		}
+		//3.判断
+		if (sum == i)
+		{
+			printf("%d ", i);
+		}
+	}
+	return 0;
+}
