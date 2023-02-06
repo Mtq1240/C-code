@@ -211,3 +211,97 @@ int main()
 	//printf("%d\n", total);
 	return 0;
 }
+
+
+
+
+//S开发环境调试下面的代码，画图解释下面代码的问题
+#include <stdio.h>
+int main()
+{
+    int i = 0;
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    for(i=0; i<=12; i++)
+    {
+        arr[i] = 0;
+        printf("hello bit\n");
+    }
+    return 0;
+}
+
+//答案解析：
+//以下代码有两个问题：1. 数组访问越界   2. 死循环
+// 以下代码再vs2013下会造成死循环，原因：
+// 栈内存：
+               |CC  CC  CC  CC|
+         arr[0]|01  00  00  00|\
+         arr[1]|02  00  00  00| \
+         arr[2]|03  00  00  00|  \
+         arr[3]|04  00  00  00|   \
+         arr[4]|05  00  00  00|    \
+         arr[5]|06  00  00  00|    /  arr的空间
+         arr[6]|07  00  00  00|   /
+         arr[7]|08  00  00  00|  /
+         arr[8]|09  00  00  00| /
+         arr[9]|0A  00  00  00|/
+               |CC  CC  CC  CC|
+               |CC  CC  CC  CC|
+               |00  00  00  00| i的空间
+               |CC  CC  CC  CC|
+//for循环中，i的内容是从0，一直增加到12，而数组只有10个空间，因此会越界
+//每次访问arr数组i号位置时，都会将该位置内容设置为0，当访问到arr[12]时，也会将该位置内容设置为0，而位     
+//置恰好为i的位置，即a[12]恰巧将i设置为0，因此造成死循环。
+		       
+
+		       
+		       
+//*		       
+//调整奇数偶数顺序
+//输入一个整数数组，实现一个函数，
+//来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，
+
+#include<stdio.h>
+void print(int *arr,int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+
+void move(int*arr,int sz)
+{
+	int left = 0;
+	int right = sz-1;
+
+	while (left < right)
+	{
+		//从前向后找偶数,如果找到奇数就不进入循环,则会进入下面的交换
+		while ((left<right)&&(arr[left]%2==1))//不加入left<right则会越界访问
+		{
+			left++;
+		}
+		//从后向前找奇数,如果找到偶数就不进入循环,则会进入下面的交换
+		while ((left < right) && (arr[right] % 2 == 0))
+		{
+			right--;
+		}
+		//交换
+		if (left < right)
+		{
+			int tmp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = tmp;
+		}
+	}
+}
+
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10};
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	move(arr, sz);
+	print(arr,sz);
+	return 0;
+}
