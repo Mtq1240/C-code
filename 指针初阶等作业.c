@@ -184,3 +184,30 @@ int main()
 	}
 	return 0;
 }
+
+
+//喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以多少汽水（编程实现）。
+
+#include<stdio.h>
+int main()
+{
+	int money = 0;
+	int total = 0;
+	scanf("%d", &money);
+
+	if (money > 0)
+		total = 2 * money - 1;
+	printf("%d\n", total);
+	//int money = 0;
+	//scanf("%d", &money);
+	//int total = money;//1.有多少钱就能喝多少瓶
+	//int empty = money;//2.有多少钱就有多少空瓶子
+
+	//while (empty >= 2)
+	//{
+	//	total += empty / 2;
+	//	empty = empty / 2 + empty % 2;
+	//}
+	//printf("%d\n", total);
+	return 0;
+}
