@@ -108,3 +108,79 @@ int main()
 	}
 	return 0;
 }
+
+
+//6.
+//写一个函数，可以逆序一个字符串的内容。
+#include<stdio.h>
+#include<assert.h>
+#include<string.h>
+void reverse(char *arr)
+{
+	assert(arr);
+	char* left = arr;
+	char* right = arr + strlen(arr) - 1;
+
+	while (left < right)
+	{
+		char tmp = 0;
+		tmp = *left;
+		*left = *right;
+		*right = tmp;
+		left++;
+		right--;
+	}
+}
+int main()
+{
+	char arr[] = "hello bit";
+	reverse(arr);
+	printf("%s\n", arr);
+	return 0;
+}
+
+//用C语言在屏幕上打印菱形
+#include<stdio.h>
+int main()
+{
+	int line = 0;
+	scanf("%d", &line);//7
+	//上三角
+	
+	for (int i = 0; i < line; i++)
+	{
+		//行
+		//打印空格
+		int j = 0;
+		for (j = 0; j < line-1-i; j++)
+		{
+			printf(" ");
+		}
+		//打印*
+		for (j = 0; j <2*i+1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+	}
+
+	//下三角
+	for (int i = 0; i < line-1; i++)
+	{
+		//行
+		//打印空格
+		int j = 0;
+		for (j = 0; j <=i; j++)
+		{
+			printf(" ");
+		}
+		//打印*
+		for (j = 0; j<2*(line-1-i)-1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+}
