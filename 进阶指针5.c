@@ -53,6 +53,21 @@ int main()
 	printf("%d\n", strlen(&arr + 1));// 随机值
 	printf("%d\n", strlen(&arr[0] + 1));// 5
 
+	char* p = "abcdef";
+	printf("%d\n", sizeof(p));// 4/8
+	printf("%d\n", sizeof(p+1));// 4/8
+	printf("%d\n", sizeof(*p));// 1
+	printf("%d\n", sizeof(p[0]));// 1
+	printf("%d\n", sizeof(&p));// 4/8
+	printf("%d\n", sizeof(&p+1));// 4/8
+	printf("%d\n", sizeof(&p[0]+1));//4/8
 
+	printf("%d\n", strlen(p));// 6
+	printf("%d\n", strlen(p+1));// 5
+	printf("%d\n", strlen(*p));// 错误,*p传的是a的ascall码值
+	printf("%d\n", strlen(p[0]));// 错误
+	printf("%d\n", strlen(&p));// 随机值
+	printf("%d\n", strlen(&p + 1));// 随机值
+	printf("%d\n", strlen(&p[0] + 1));// 5
 	return 0;
 }
