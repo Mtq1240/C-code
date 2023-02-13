@@ -28,6 +28,31 @@ int main()
 	printf("%d\n", sizeof(&arr+1));//4/8整个数组的地址+1跳到数组后面的地址
 	printf("%d\n", sizeof(&arr[0]+1));//4/8  第二个元素的地址
 
+	printf("%d\n", strlen(arr));//随机值,arr首元素地址,向后找 \0 
+	printf("%d\n", strlen(arr+0));//随机值
+	printf("%d\n", strlen(*arr));//错误   
+	printf("%d\n", strlen(arr[1]));//错误  
+	printf("%d\n", strlen(&arr));//随机值
+	printf("%d\n", strlen(&arr+1));//随机值
+	printf("%d\n", strlen(&arr[0]+1));//随机值-1
+
+	char arr[] = "acdef";
+	printf("%d\n", sizeof(arr));//7
+	printf("%d\n", sizeof(arr + 0));// 4/8
+	printf("%d\n", sizeof(*arr));//  1 
+	printf("%d\n", sizeof(arr[1]));//  1
+	printf("%d\n", sizeof(&arr));// 4/8
+	printf("%d\n", sizeof(&arr + 1));// 4/8
+	printf("%d\n", sizeof(&arr[0] + 1));// 4/8
+
+	printf("%d\n", strlen(arr));// 6
+	printf("%d\n", strlen(arr + 0));// 6
+	printf("%d\n", strlen(*arr));// 错误
+	printf("%d\n", strlen(arr[1]));// 错误
+	printf("%d\n", strlen(&arr));// 6
+	printf("%d\n", strlen(&arr + 1));// 随机值
+	printf("%d\n", strlen(&arr[0] + 1));// 5
+
 
 	return 0;
 }
