@@ -82,3 +82,16 @@ int main()
 	printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));//10  5
 	return 0;
 }
+
+
+
+//7.
+#include<stdio.h>
+int main()
+{
+	char* a[] = { "work","at","alibaba" };
+	char** pa = a;//a是首元素地址,它的类型是char*,取地址就将它放在char**中
+	pa++;//首元素地址+1.指向第二个元素的地址
+	printf("%s\n", *pa);//at
+	return 0;
+}
