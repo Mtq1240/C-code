@@ -56,3 +56,17 @@ int main()
 	printf("%d", p[0]);//  1   逗号表达式 p[0]=*(p+0)
 	return 0;
 }
+
+
+
+//5.
+#include<stdio.h>
+int main()
+{
+	int a[5][5];
+	int(*p)[4];
+	p = a;
+	printf("%p,%d\n", &p[4][2] - &a[4][2], &p[4][2] - &a[4][2]);//FFFFFFFC -4 
+	
+	return 0;
+}
