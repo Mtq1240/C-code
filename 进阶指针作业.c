@@ -96,7 +96,6 @@ D.int(*a[10](int));
 //1 2 3
 //4 5 6
 //7 8 9
-
 #include<stdio.h>
 int find(int arr[3][3], int r, int c, int k)
 {
@@ -128,6 +127,57 @@ int main()
 	if (ret == 1)
 	{
 		printf("找到了");
+	}
+	else
+	{
+		printf("找不到");
+	}
+	return 0;
+}
+
+
+//2.
+#include<stdio.h>
+int find(int arr[3][3], int *px, int*py , int k)
+{
+	int x = 0;
+	int y = *py - 1;
+
+	while (x < *px && y >= 0)
+	{
+		if (arr[x][y] < k) //从arr[0][2] 开始
+		{
+			x++;
+		}
+		else if (arr[x][y] > k)
+		{
+			y--;
+		}
+		else
+		{
+			*px = x;
+			*py = y;
+			return 1; //找到了
+		}
+	}
+	return 0; //找不到
+}
+int main()
+{
+	int arr[9] = { 1,2,3,4,5,6,7,8,9 };
+	int k = 7;
+	int x = 3;
+	int y = 3;
+	//&x,&y
+	//1.传入参数
+	//2.带回值
+
+
+	int ret = find(arr, &x, &y, k);
+	if (ret == 1)
+	{
+		printf("找到了\n");
+		printf("下标为%d %d", x, y);
 	}
 	else
 	{
