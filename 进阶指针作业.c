@@ -39,3 +39,5 @@ B.    int(*)fun(int a, int b);
 C.    int (*fun)(int a, int b);
 
 D.    (int *)fun(int a, int n);
+
+//5.
