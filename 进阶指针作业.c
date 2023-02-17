@@ -29,3 +29,13 @@ B.    int (*fun)(int *)
 C.    int* fun(int *)
 
 D.    int* (*fun)(int *)
+
+//4.
+//下面哪个是函数指针？( C  )
+A.    int* fun(int a, int b);
+
+B.    int(*)fun(int a, int b);
+
+C.    int (*fun)(int a, int b);
+
+D.    (int *)fun(int a, int n);
