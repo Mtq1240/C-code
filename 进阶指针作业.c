@@ -57,3 +57,21 @@ B.int(*ptr)[10] = &arr;
 C.p = &arr[0];
 
 D.p = &arr;
+
+
+//6.
+//下面代码关于数组名描述不正确的是( A )
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 0 };
+	return 0;
+}
+
+A.数组名arr和& arr是一样的;
+
+B.sizeof(arr), arr表示整个数组;
+
+C.&arr, arr表示整个数组;
+
+D.除了sizeof(arr)和&arr中的数组名, 其他地方出现的数组名arr, 都是数组首元素的地址;
