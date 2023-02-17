@@ -21,3 +21,11 @@ C.    int (*(*F)(int, int))
 D.    *(*F)(int, int)(int)
 
 //3.
+//在游戏设计中，经常会根据不同的游戏状态调用不同的函数，我们可以通过函数指针来实现这一功能，下面哪个是：一个参数为int *，返回值为int的函数指针（B ）
+A.    int (*fun)(int)
+
+B.    int (*fun)(int *)
+
+C.    int* fun(int *)
+
+D.    int* (*fun)(int *)
