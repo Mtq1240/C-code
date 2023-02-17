@@ -41,3 +41,19 @@ C.    int (*fun)(int a, int b);
 D.    (int *)fun(int a, int n);
 
 //5.
+//下面哪个代码是错误的( D )
+#include<stdio.h>
+int main()
+{
+	int* p = NULL;
+	int arr[10] = { 0 };
+	return 0;
+}
+
+A.p = arr;
+
+B.int(*ptr)[10] = &arr;
+
+C.p = &arr[0];
+
+D.p = &arr;
