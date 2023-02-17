@@ -86,3 +86,52 @@ B.int(*a)[10];
 C.int* a[10];
 
 D.int(*a[10](int));
+
+
+//8.
+//杨氏矩阵
+//有一个数字矩阵，矩阵的每行从左到右是递增的, 矩阵从上到下是递增的
+//请编写程序在这样的矩阵中查找某个数字是否存在。
+//要求 : 时间复杂度小于o(N);
+//1 2 3
+//4 5 6
+//7 8 9
+
+#include<stdio.h>
+int find(int arr[3][3], int r, int c, int k)
+{
+	int x = 0;
+	int y = c - 1;
+
+	while (x < r && y >= 0)
+	{
+		if (arr[x][y] < k) //从arr[0][2] 开始
+		{
+			x++;
+		}
+		else if (arr[x][y] > k)
+		{
+			y--;
+		}
+		else
+		{
+			return 1; //找到了
+		}
+	}
+	return 0; //找不到
+}
+int main()
+{
+	int arr[9] = { 1,2,3,4,5,6,7,8,9 };
+	int k = 7;
+	int ret = find(arr, 3, 3, k);
+	if (ret == 1)
+	{
+		printf("找到了");
+	}
+	else
+	{
+		printf("找不到");
+	}
+	return 0;
+}
