@@ -218,5 +218,14 @@ C.    回调函数一般不是函数的实现方调用，而是在特定的场�
 
 D.    回调函数是调用函数指针指向函数的函数。
 
+//4.
+//设有以下函数void fun(int n,char *s){……},则下面对函数指针的定义和赋值均是正确的是：（B ）
 
+A.    void (*pf)(int，char); pf=&fun;
+
+B.    void (*pf)(int n，char *s); pf=fun;
+
+C.    void *pf(); *pf=fun;
+
+D.    void *pf(); pf=fun;
 
