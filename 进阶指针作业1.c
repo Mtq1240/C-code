@@ -36,6 +36,7 @@ void leftRound(char * src, int time)
 }
 
 
+//1.
 //下面test函数设计正确的是：（  B D ）
 //char* arr[5] = {"hello", "bit"};
 //test(arr);
@@ -44,3 +45,20 @@ B.    void test(char** arr);
 C.    void test(char arr[5]);
 D.    void test(char* arr[5]);
 //指针的数组传递给子函数变为指针的指针，也就是二级指针。但是允许中括号写法，写成char **arr、char *arr[]、char * arr[5]都可。所以BD正确。
+
+
+//2.
+//下面程序的结果是：（A ）
+int main()
+{
+  int aa[2][5] = {10,9,8,7,6,5,4,3,2,1};
+  int *ptr1 = (int *)(&aa + 1);
+  int *ptr2 = (int *)(*(aa + 1));	//跟上题类似，&aa的类型是int (*)[2][5]，加一操作会导致跳转一个int [2][5]的长度，直接跑到刚好越界的位置。减一以后回到最后一个位置1处。
+	  				//*(aa + 1)相当于aa[1]，也就是第二行的首地址，自然是5的位置。减一以后由于多维数组空间的连续性，会回到上一行末尾的6处。故选A。
+  printf( "%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+  return 0;
+}
+A.    1, 6
+B.    10, 5
+C.    10, 1
+D.    1, 5
