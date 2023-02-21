@@ -34,3 +34,13 @@ void leftRound(char * src, int time)
 		src[j] = tmp;
 	}
 }
+
+
+//下面test函数设计正确的是：（  B D ）
+//char* arr[5] = {"hello", "bit"};
+//test(arr);
+A.    void test(char* arr);
+B.    void test(char** arr);
+C.    void test(char arr[5]);
+D.    void test(char* arr[5]);
+//指针的数组传递给子函数变为指针的指针，也就是二级指针。但是允许中括号写法，写成char **arr、char *arr[]、char * arr[5]都可。所以BD正确。
