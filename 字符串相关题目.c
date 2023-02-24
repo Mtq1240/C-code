@@ -215,6 +215,7 @@ int main()
 //AABCD左旋两个字符得到BCDAA
 //AABCD右旋一个字符得到DAABC
 
+//法1
 #include<stdio.h>
 #include<string.h>
 #include<assert.h>
@@ -254,4 +255,40 @@ int main()
 		printf("no");
 	}
 	return 0;
+}
+
+
+
+//法2
+#include<stdio.h>
+int is_string_rotate(char* str1, char* str2)
+{
+	//长度不相等,肯定不是旋转得到的
+	if (strlen(str1) != strlen(str2))
+	{
+		return 0;
+	}
+	//1.str1字符串的后面追加一个str1
+	int len = strlen(str1);
+	strncat(str1, str1, len);
+	//2.判断str2是否为str1的子串
+	char* ret = strstr(str1, str2);
+
+	return ret != NULL;
+}
+int main()
+{
+	char arr1[20] = "ABCDEF";
+		char arr2 [] = "CDEFAB";
+		int ret = is_string_rotate(arr1, arr2);
+		if (ret == 1)
+		{
+			printf("yes");
+		}
+		else
+		{
+			printf("no");
+		}
+		return 0;
+	
 }
