@@ -60,3 +60,17 @@ A.    1, 6
 B.    10, 5
 C.    10, 1
 D.    1, 5
+
+		
+	
+//3.
+//下面代码中print_arr函数参数设计哪个是正确的？（ C ）
+ int arr[3][5] = {1,2,3,4,5,6,7,8,9,10};
+ print_arr(arr, 3, 5);
+A.    void print_arr(int arr[][],int row, int col);
+B.    void print_arr(int* arr, int row, int col);
+C.    void print_arr(int (*arr)[5], int row, int col);
+D.    void print_arr(int (*arr)[3], int row, int col);
+//二维数组相当于数组的数组，传到子函数变成数组的指针。int arr[3][5]相当于是3个元素的arr，
+//每个元素是int [5]，所以int [5]是类型说明不能省略。丢失的信息只有数组的元素个数，
+//也就是3。A丢了类型中的5，B选项指针层级都错了，D选项5写成了3，故选C。
