@@ -202,3 +202,56 @@ int main()
 	printf("%s\n", arr);
 	return 0;
 }
+
+
+
+
+
+//字符串旋转结果
+//写一个函数，判断一个字符串是否为另外一个字符串旋转之后的字符串。
+//例如：给定s1 = AABCD和s2 = BCDAA，返回1
+//给定s1 = abcd和s2 = ACBD，返回0.
+//AABCD左旋一个字符得到ABCDA
+//AABCD左旋两个字符得到BCDAA
+//AABCD右旋一个字符得到DAABC
+
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+int is_string_rotate(char*arr1,char* arr2)
+{
+	assert(arr1);
+	assert(arr2);
+	int i = 0;
+	int n = strlen(arr1);
+	for (i = 0; i < n; i++)
+	{
+		char tmp = *arr1;
+		for (int j = 0; j < n; j++)
+		{
+			*(arr1 + j) = *(arr1 + j + 1);
+		}
+			*(arr1 + n - 1) = tmp;
+
+			if (strcmp(arr1, arr2) == 0)
+			{
+				return 1;
+			}
+	}
+	return 0;
+}
+int main()
+{
+	char arr1[] = "ABCDEF";
+	char arr2 [] = "CDEFAB";
+	int ret = is_string_rotate(arr1, arr2);
+	if (ret == 1)
+	{
+		printf("yes");
+	}
+	else
+	{
+		printf("no");
+	}
+	return 0;
+}
