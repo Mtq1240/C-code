@@ -22,3 +22,33 @@ char * strcat ( char * destination，const char * source );
 destination is overwritten by the first character of source, and a null-character is included at the end ofthe new string formed by the concatenation of both in destination.
 ·源字符串必须以'\0'结束。
 ·目标空间必须有足够的大，能容纳下源字符串的内容。·目标空间必须可修改。
+//模拟实现stract
+//1.找到目标字符串中\0
+//2.元素数据追加过去,包含\0
+
+#include<stdio.h>
+#include<assert.h>
+char * my_stract(char* dest, char* src)
+{
+	char* ret = dest;
+	assert(dest && src);
+	//1.找目标字符串的\0
+	while (*dest)
+	{
+		dest++;
+	}
+	//2.追加源字符串,包含\0
+	while (*dest++ = *src++)
+	{
+		;
+	}
+	return ret;//返回目标空间的起始地址
+}
+int main()
+{
+	char arr1[20] = "hello";
+	char arr2[] = "word";
+	printf("%s\n", my_stract(arr1, arr2));
+
+	return 0;
+}
