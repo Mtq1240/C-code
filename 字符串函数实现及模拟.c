@@ -78,3 +78,45 @@ int main()
 
 	return 0;
 }
+
+
+
+
+//4.
+//strcmp
+//- 字符串比较大小(第一个字符串小于第二个字符串返回小于0的数,大于返回大于0的数,相等返回0)
+#include<stdio.h>
+#include<assert.h>
+int my_strcmp(char* s1, char* s2)
+{
+	assert(s1 && s2);
+	while (*s1 == *s2)
+	{
+		if (*s1 == '\0')
+		{
+			return 0;
+		}
+		s1++;
+		s2++;
+	}
+	return *s1 - *s2;
+}
+int main()
+{
+	char *a = "abcdef";
+	char *b = "abcde";
+	int ret = my_strcmp(a, b);
+	if (ret == 0)
+	{
+		printf("a=b");
+	}
+	else if (ret < 0)
+	{
+		printf("a<b");
+	}
+	else
+	{
+		printf("a>b");
+	}
+	return 0;
+}
