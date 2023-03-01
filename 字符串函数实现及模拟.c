@@ -120,3 +120,18 @@ int main()
 	}
 	return 0;
 }
+
+
+
+//受限制的字符串函数
+//6.
+//strncpy
+#include<stdio.h>
+int main()
+{
+	char arr1[20] = "abcdef";
+	char arr2[20] = "qwer";
+	strncpy(arr1, arr2, 6);
+	printf("%s\n", arr1);//qwer\0\0
+	return 0;
+}
