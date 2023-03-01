@@ -149,3 +149,21 @@ int main()
 	printf("%s\n", arr1);//hello world\0,当追加的数比数组大时它并不会和strncpy函数一样在后面加上\0,碰到 \0则会停止
 	return 0;
 }
+
+
+
+
+
+//8.
+//strncmp
+#include<stdio.h>
+int main()
+{
+	char* p = "abcdef"; 
+	char* q = "abcqwert";
+	// int ret = strcmp(p, q); 
+	int ret = strncmp(p, q, 4); //比较前四个字符
+	printf("%d \n", ret);
+	return 0;
+}
+
