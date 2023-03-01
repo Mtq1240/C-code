@@ -132,6 +132,20 @@ int main()
 	char arr1[20] = "abcdef";
 	char arr2[20] = "qwer";
 	strncpy(arr1, arr2, 6);
-	printf("%s\n", arr1);//qwer\0\0
+	printf("%s\n", arr1);//qwer\0\0,追加数量大于数组时会强行凑 \0
+	return 0;
+}
+
+
+
+//7.
+//strncat
+#include<stdio.h>
+int main()
+{
+	char arr1[20] = "hello ";
+	char arr2[20] = "word";
+	strancat(arr1, arr2,10);
+	printf("%s\n", arr1);//hello world\0,当追加的数比数组大时它并不会和strncpy函数一样在后面加上\0,碰到 \0则会停止
 	return 0;
 }
