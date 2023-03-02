@@ -167,3 +167,53 @@ int main()
 	return 0;
 }
 
+
+
+
+//9.
+//strstr函数实现
+#include<stdio.h>
+#include<assert.h>
+char* my_strstr(const char* str1,const char* str2)
+{
+	assert(str1 && str2);
+	const char* s1 = str1;
+	const char* s2 = str2;
+	const char* cp = str1;
+	if (*str2 == '\0')
+	{
+		return (char*)str1;
+	}
+	while (*cp)
+	{
+		s1 = cp;//方便s1回退
+		s2 = str2;//重新找
+		while (*s1 && *s2 && *s1 == *s2)
+		{
+			s1++;
+			s2++;
+		}
+		if (*s2 == '\0')
+		{
+			return (char*)cp;
+		}
+		cp++;
+	}
+	return NULL;
+}
+int main()
+{
+	char arr1[] = "abcdefabcdef";
+	char arr2[] = "bcd";
+	//strstr: 在arr1中查找是否包含arr2数组
+	char* ret = my_strstr(arr1, arr2);
+	if (ret == NULL)
+	{
+		printf("没找到");
+	}
+	else
+	{
+		printf("找到了:%s\n",ret);
+	}
+	return 0;
+}
