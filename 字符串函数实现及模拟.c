@@ -268,3 +268,25 @@ int main()
 
 //13.
 //isdigit : 如果是数字字符返回非0的值,如果不是数字字符,返回0
+
+
+
+//14.
+//isupper  大写字母A~Z,tolower :大写转小写
+#include<stdio.h>
+int main()
+{
+	char arr[20] = { 0 };
+	scanf("%s", arr);
+	int i = 0;
+	while (arr[i] != '\0')
+	{
+		if (isupper(arr[i]))
+		{
+			arr[i] = tolower(arr[i]);
+		}
+		printf("%c", arr[i]);
+		i++;
+	}
+	return 0;
+}
