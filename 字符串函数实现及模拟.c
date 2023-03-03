@@ -218,3 +218,24 @@ int main()
 	}
 	return 0;
 }
+
+
+
+//10.
+//strtok: 切割字符串  char*strtok(char*str,const char*sep);
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr[] = "mtq@1240.com";
+	char* p = "@.";
+	char tmp[20] = { 0 };
+	strcpy(tmp, arr);
+	char* ret = NULL;
+	//第一次strtok函数参数不能为空指针,找到字符串中的第一个标记,strtok将保存标记的在字符串中的位置
+	//第一次之后strtok函数参数为NULL,将在第一次保存的位置向后查找第二个标记
+	for (ret = strtok(tmp, p); ret != NULL;ret=strtok(NULL,p))//如果找到最后还是没有找到,返回空指针
+	{
+		printf("%s\n", ret);
+	}
+}
