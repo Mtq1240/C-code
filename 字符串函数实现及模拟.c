@@ -249,6 +249,7 @@ int main()
 // 是个一个全局的错误码
 //char*strerror(int errnum)
 #include<stdio.h>
+#include<string.h>
 #include<errno.h>
 int main()
 {
