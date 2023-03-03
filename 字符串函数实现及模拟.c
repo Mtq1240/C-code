@@ -239,3 +239,26 @@ int main()
 		printf("%s\n", ret);
 	}
 }
+
+
+
+
+//11.
+// strerror : 返回错误代码所对应的错误信息
+//使用库函数的时候,调用库函数失败的时候,都会设置错误码
+// 是个一个全局的错误码
+//char*strerror(int errnum)
+#include<stdio.h>
+#include<errno.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 1;
+	}
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
