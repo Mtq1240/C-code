@@ -3,7 +3,7 @@
 //void*memcpy(void*destination,const void*source,size_t num)
 #include<stdio.h>
 #include<assert.h>
-void* my_memcpy(void* dest, void* src, size_t num)
+void* my_memcpy(void* dest, const void* src, size_t num)
 {
 	void* ret = dest;
 	assert(dest && src);
