@@ -54,3 +54,23 @@ int main()
 //vs 默认的值为 8 .
 //3.结构体总大小为对齐数(每个成员变量都有一个对齐数)的整数倍;
 //4.如果嵌套了结构体的情况,嵌套的结构体对齐到自己的最大对齐数的整数倍处,结构体的真题大小就是所有最大对齐数(含嵌套结构体的对齐数)的整数倍
+#include<stdio.h>
+struct s1
+{
+	double d;
+	char c;
+	int i;
+};
+struct s2
+{
+	char c1;
+	struct s1 s1;
+	double b;
+};
+int main()
+{
+	struct s1 s1 = { 0 };
+	struct s2 s2 = { 0 };
+	printf("%d\n", sizeof(struct s2));//32 1+7+16+8
+
+}
